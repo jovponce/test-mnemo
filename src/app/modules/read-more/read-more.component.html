@@ -1,0 +1,59 @@
+<div class="read-more section-image" style="background-image: url('../assets/images/suscribe.png')">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <h2 class="title">Subscribe</h2>
+                
+            </div>
+            <div class="col-md-5 col-md-offset-2">
+                <div class="card card-contact">
+                    <form [formGroup]="newForm">
+                        
+                        <div class="card-content">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group label-floating">
+                                        <label class="control-label">Nombre</label>
+                                        <input type="text" name="name" class="form-control" appPlainText formControlName="name">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group label-floating">
+                                        <label class="control-label">Apellido</label>
+                                        <input type="text" name="last-name" class="form-control" appPlainText formControlName="last_name">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group label-floating">
+                                <label class="control-label">Fecha de nacimiento</label>
+                                <div class="input-group">
+                                  <input class="form-control" placeholder="yyyy-mm-dd"
+                                         name="dp" formControlName="age" ngbDatepicker #d="ngbDatepicker">
+                                  <div class="input-group-append">
+                                    <button class="btn btn-light btn-sm" (click)="d.toggle()" type="button">
+                                        <img height="16px" width="auto" class="icon" src="./assets/icons/calendar-plus.svg">
+                                    </button>
+                                  </div>
+                                </div>
+
+                            </div>
+                            <div  *ngIf= "newForm.get('age').dirty && newForm.get('age').errors" class="alert alert-danger">
+                                Solo mayores de edad
+                            </div>
+                            
+                            <div class="row">
+                                
+                                <div class="col-md-6">
+                                    <button type="submit" class="btn btn-primary pull-right" [disabled]="!newForm.valid" (click)="showData()">Enviar</button>
+                                </div>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
