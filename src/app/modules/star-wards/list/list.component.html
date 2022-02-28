@@ -14,17 +14,18 @@
                 <div class="col-md-4 mb-4">
                     <div class="card card-sw-list">
                         <div class="card-episode">
-                            <p class="mt-3">Episode</p>
-                            <h1>{{film?.episode_id}}</h1>
+                            <img src="assets/images/{{film?.episode_id}}.png" alt="" width="auto" height="90" >
                         </div>
 
                         <div class="card-content">
                             <a [routerLink]="['../detail/',i+1]">
-                                <h4 class="card-title">{{film?.title}}</h4>
+                                <h4 class="card-title">Film: {{film?.title}}</h4>
                             </a>
-                            <h5 class="category text-muted">{{film?.director}}</h5>
-                            <h6>{{film?.release_date | date: 'yyyy'}}</h6>
+                            <h6>Episode: {{film?.episode_id}}</h6>
+                            <h5 class="category text-muted">Director: {{film?.director}}</h5>
+                            <h6>Release date: {{film?.release_date | date: 'yyyy'}}</h6>
                         </div>
+
                     </div>
                 </div>
             </ng-container>
